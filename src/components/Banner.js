@@ -1,13 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Banner.css";
+import logo from "../images/vt_logo_orange.avif";
 
 const Banner = () => {
   return (
     <div className="banner-container">
       <header className="banner">
         {/* Logo on the Left */}
-        <div className="banner-logo">VT Electric Inc.</div>
+        <div className="banner-logo">
+          <Link to="/">
+            <img src={logo} alt="VT Electric Inc." />
+          </Link>
+        </div>
 
         {/* Navigation & Contact Button on the Right */}
         <div className="banner-right">

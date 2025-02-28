@@ -5,16 +5,15 @@
 
 .banner {
   background-color: white;
-  padding: 25px 20px;
+  padding: 25px 20px; /* Increased height */
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.banner-logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: rgb(18, 18, 18);
+.banner-logo img {
+  height: 50px; /* Adjust size as needed */
+  width: auto;
 }
 
 .banner-right {
@@ -40,14 +39,18 @@
 }
 
 .contact-button {
-  background-color: #007bff;
+  background-color: #3b8af0; /* Match the blue shade */
   color: white;
-  padding: 8px 16px;
-  border-radius: 5px;
+  padding: 12px 17px;
+  border-radius: 15px; /* Fully rounded */
   text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
   transition: background-color 0.3s ease-in-out;
 }
 
 .contact-button:hover {
-  background-color: #0056b3;
+  background-color: #3f8fdd; /* Slightly darker blue on hover */
 }
