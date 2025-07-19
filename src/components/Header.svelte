@@ -1,28 +1,31 @@
 <script>
   import Logo from './Logo.svelte';
+  import { link } from 'svelte-spa-router';
   
   let mobileMenuOpen = false;
   
   const navItems = [
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Projects', href: '#projects' }
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Projects', href: '/projects' }
   ];
 </script>
 
 <header class="fixed top-0 w-full bg-white shadow-sm z-50">
   <nav class="section-padding">
     <div class="max-width-container flex items-center justify-between py-4">
-      <Logo />
+      <a href="/" use:link>
+        <Logo />
+      </a>
       
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center gap-8">
         {#each navItems as item}
-          <a href={item.href} class="text-gray-700 hover:text-vt-orange transition-colors font-medium">
+          <a href={item.href} use:link class="text-gray-700 hover:text-vt-orange transition-colors font-medium">
             {item.name}
           </a>
         {/each}
-        <a href="#contact" class="btn-primary">Contact Us</a>
+        <a href="/contact" use:link class="btn-primary">Contact Us</a>
       </div>
       
       <!-- Mobile Menu Button -->
@@ -46,6 +49,7 @@
         {#each navItems as item}
           <a
             href={item.href}
+            use:link
             class="block py-2 text-gray-700 hover:text-vt-orange transition-colors font-medium"
             on:click={() => mobileMenuOpen = false}
           >
@@ -53,7 +57,8 @@
           </a>
         {/each}
         <a
-          href="#contact"
+          href="/contact"
+          use:link
           class="btn-primary inline-block mt-4"
           on:click={() => mobileMenuOpen = false}
         >

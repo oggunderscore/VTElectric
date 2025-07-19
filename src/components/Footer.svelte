@@ -1,12 +1,13 @@
 <script>
   import Logo from './Logo.svelte';
+  import { link } from 'svelte-spa-router';
   
   const footerLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Projects', href: '/projects' },
+    { name: 'Contact', href: '/contact' }
   ];
 </script>
 
@@ -24,9 +25,9 @@
       <div class="md:text-right">
         <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
         <nav class="space-y-2">
-          {#each footerLinks as link}
-            <a href={link.href} class="block text-gray-400 hover:text-white transition-colors">
-              {link.name}
+          {#each footerLinks as footerLink}
+            <a href={footerLink.href} use:link class="block text-gray-400 hover:text-white transition-colors">
+              {footerLink.name}
             </a>
           {/each}
         </nav>
