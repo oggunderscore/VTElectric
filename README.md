@@ -1,70 +1,116 @@
-# Getting Started with Create React App
+# VT Electric Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive website for VT Electric Inc., a trusted electrical contracting company specializing in street lighting, traffic systems, and fiber optic installations.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- **Responsive Design**: Fully responsive layout that works on all devices
+- **Modern UI**: Clean and professional design using TailwindCSS
+- **Component-Based**: Modular Svelte components for easy maintenance
+- **Optimized Performance**: Built with Vite for fast development and optimized production builds
+- **Contact Form**: Interactive contact form for customer inquiries
+- **Project Showcase**: Gallery to display completed projects
 
-### `npm start`
+## 🛠️ Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend Framework**: Svelte
+- **Build Tool**: Vite
+- **Styling**: TailwindCSS
+- **Font**: Inter (Google Fonts)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📁 Project Structure
 
-### `npm test`
+```
+VTElectric/
+├── src/
+│   ├── components/
+│   │   ├── Header.svelte      # Navigation header
+│   │   ├── Hero.svelte        # Hero section component
+│   │   ├── ProjectCard.svelte # Project display card
+│   │   ├── ContactForm.svelte # Contact form component
+│   │   ├── Footer.svelte      # Website footer
+│   │   └── Logo.svelte        # VT Electric logo
+│   ├── routes/
+│   │   └── Home.svelte        # Home page
+│   ├── App.svelte             # Main app component
+│   ├── app.css                # Global styles with Tailwind
+│   └── main.js                # App entry point
+├── public/                    # Static assets
+├── tailwind.config.js         # Tailwind configuration
+├── postcss.config.js          # PostCSS configuration
+├── package.json              
+└── vite.config.js            
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🏗️ Installation
 
-### `npm run build`
+1. Clone the repository:
+```bash
+git clone [repository-url]
+cd VTElectric
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Install dependencies:
+```bash
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Start the development server:
+```bash
+npm run dev
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Open your browser and navigate to `http://localhost:5173`
 
-### `npm run eject`
+## 📦 Building for Production
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To create a production build:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm run build
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The built files will be in the `dist/` directory.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To preview the production build:
 
-## Learn More
+```bash
+npm run preview
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🎨 Customization
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Colors
+The project uses custom colors defined in `tailwind.config.js`:
+- `vt-orange`: #FF6B35 (Brand orange)
+- `vt-dark`: #0B1929 (Dark blue)
+- `vt-gray`: #6B7280 (Gray)
 
-### Code Splitting
+### Components
+All components are modular and accept props for customization. Check individual component files for available props.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📱 Responsive Design
 
-### Analyzing the Bundle Size
+The website is fully responsive with breakpoints:
+- Mobile: < 768px
+- Tablet: 768px - 1024px
+- Desktop: > 1024px
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🤝 Contributing
 
-### Making a Progressive Web App
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📄 License
 
-### Advanced Configuration
+This project is proprietary to VT Electric Inc. All rights reserved.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📞 Contact
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+VT Electric Inc.
+- Phone: (909)-985-1755
+- Email: support@vtelectric.net
+- Location: Ontario, CA 91762
