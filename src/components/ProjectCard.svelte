@@ -4,20 +4,78 @@
   export let description = '';
 </script>
 
-<div class="group relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2">
-  <div class="aspect-w-16 aspect-h-9 overflow-hidden">
+<style>
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+  }
+  
+  .card-container:hover {
+    transform: translateY(-0.5rem);
+  }
+  
+  .image-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* Creates a square aspect ratio */
+    overflow: hidden;
+    border-radius: 0.75rem; /* Added rounded corners */
+  }
+  
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+    border-radius: 0.75rem; /* Added rounded corners */
+  }
+  
+  .card-container:hover img {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  
+  .card-title {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+  }
+  
+  .card-description {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+  }
+</style>
+
+<div class="card-container">
+  <div class="image-container">
+    <img src={image} alt={title} />
+  </div>
+  <h3 class="card-title">{title}</h3>
+  {#if description}
+    <p class="card-description">{description}</p>
+  {/if}
+</div>
+<!-- 
+<div class="group">
+  <div class="aspect-container">
     <img 
       src={image} 
       alt={title}
-      class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
     />
   </div>
-  <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-    <div class="p-6 text-white">
-      <h3 class="text-xl font-semibold mb-2">{title}</h3>
+  <div class="content-overlay">
+    <div class="text-content">
+      <h3 class="card-title">{title}</h3>
       {#if description}
-        <p class="text-sm opacity-90">{description}</p>
+        <p class="card-description">{description}</p>
       {/if}
     </div>
   </div>
-</div>
+</div> -->

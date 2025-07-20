@@ -6,15 +6,46 @@
 
 <style>
   .page-main {
-    @apply px-6 md:px-12 lg:px-24 max-w-7xl mx-auto pt-24;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1.5rem;
+    margin: 0 auto;
+    max-width: 80rem;
+    padding-top: 6rem;
+  }
+  
+  @media (min-width: 768px) {
+    .page-main {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .page-main {
+      padding-left: 6rem;
+      padding-right: 6rem;
+    }
   }
   
   .about-subtitle {
-    @apply text-3xl lg:text-4xl font-semibold text-gray-800 text-center mb-12;
+    font-size: 1.875rem;
+    font-weight: 600;
+    color: #1f2937;
+    text-align: center;
+    margin: 0 auto 3rem;  /* Center the subtitle */
+    max-width: 50%;
+  }
+  
+  @media (min-width: 1024px) {
+    .about-subtitle {
+      font-size: 2.25rem;
+    }
   }
   
   .about-card-section {
-    @apply mt-8;
+    margin-top: 2rem;
   }
 </style>
 

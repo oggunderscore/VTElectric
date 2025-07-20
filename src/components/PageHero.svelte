@@ -7,8 +7,12 @@
 
 <style>
   .page-hero-section {
-    padding-top: 140px; /* Account for fixed header */
+    padding-top: 50px; /* Account for fixed header */
     padding-bottom: 2rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
   }
   
   .page-hero-title {

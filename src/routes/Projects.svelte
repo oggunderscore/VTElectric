@@ -1,55 +1,71 @@
 <script>
-  import ServiceCard from '../components/ServiceCard.svelte';
+  import ProjectCard from '../components/ProjectCard.svelte';
   import PageHero from '../components/PageHero.svelte';
   
   const projects = [
     {
       title: 'Sixth Street Viaduct',
-      image: '/src/assets/placeholder.jpeg',
-      description: 'Major infrastructure lighting project for the iconic Los Angeles bridge'
+      image: '/src/assets/via_night.jpeg',
+      // description: 'Major infrastructure lighting project for the iconic Los Angeles bridge'
     },
     {
       title: '405 Freeway Traffic Signal Intersections',
-      image: '/src/assets/placeholder.jpeg',
-      description: 'Comprehensive traffic signal system installation and management'
+      image: '/src/assets/405.png',
+      // description: 'Comprehensive traffic signal system installation and management'
     },
     {
       title: '57 & 91 Freeway High Mast Lights',
-      image: '/src/assets/placeholder.jpeg',
-      description: 'High mast lighting installation for improved highway safety'
+      image: '/src/assets/57.jpg',
+      // description: 'High mast lighting installation for improved highway safety'
     },
     {
       title: 'Downtown LA Street Lighting',
       image: '/src/assets/placeholder.jpeg',
-      description: 'Modern LED street lighting upgrade for downtown Los Angeles'
+      // description: 'Modern LED street lighting upgrade for downtown Los Angeles'
     },
     {
       title: 'Metro Fiber Optic Network',
       image: '/src/assets/placeholder.jpeg',
-      description: 'Fiber optic infrastructure for metropolitan connectivity'
+      // description: 'Fiber optic infrastructure for metropolitan connectivity'
     },
     {
       title: 'Smart City Initiative',
       image: '/src/assets/placeholder.jpeg',
-      description: 'Integrated smart lighting and traffic management systems'
+      // description: 'Integrated smart lighting and traffic management systems'
     }
   ];
 </script>
 
 <style>
   .page-main {
-    @apply px-6 md:px-12 lg:px-24 max-w-7xl mx-auto pt-24;
+    padding: 0 1.5rem;
+    margin: 0 auto;
+    max-width: 80rem;
+    padding-top: 6rem;
   }
   
   .projects-section {
-    @apply mt-8;
+    margin-top: 2rem;
   }
   
   .responsive-grid-3 {
-    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .responsive-grid-3 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .responsive-grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 </style>
-
 
 <main class="page-main">
   <!-- Hero Section -->
@@ -59,10 +75,10 @@
   />
   
   <!-- Projects Grid -->
-  <section class="mt-8">
+  <section class="projects-section">
     <div class="responsive-grid-3">
       {#each projects as project}
-        <ServiceCard {...project} showDescription={true} />
+        <ProjectCard {...project} />
       {/each}
     </div>
   </section>

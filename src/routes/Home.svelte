@@ -1,6 +1,7 @@
 <script>
   import { link } from 'svelte-spa-router';
-  import ServiceCard from '../components/ServiceCard.svelte';
+  import ProjectCard from '../components/ProjectCard.svelte';
+  import PageHero from '../components/PageHero.svelte';
   
   const services = [
     { title: 'Fiber Optic Installation', image: '/src/assets/placeholder.jpeg' },
@@ -12,18 +13,30 @@
   ];
   
   const projects = [
-    { title: 'Sixth Street Viaduct', image: '/images/sixth-street-viaduct.jpg' },
-    { title: '405 Freeway Traffic Signal Intersections', image: '/images/405-freeway.jpg' },
-    { title: '57 & 91 Freeway High Mast Lights', image: '/images/high-mast-lights.jpg' }
+    { 
+      title: 'Sixth Street Viaduct',
+      image: '/src/assets/via_night.jpeg',
+    },
+    { 
+      title: '405 Freeway Traffic Signal Intersections',
+      image: '/src/assets/405.png',
+    },
+    { 
+      title: '57 & 91 Freeway High Mast Lights',
+      image: '/src/assets/57.jpg',
+    }
   ];
 </script>
 
 <style>
-  /* Page layout */
   .page-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 0 1.5rem;
-    max-width: 80rem;
     margin: 0 auto;
+    max-width: 80rem;
+    width: 100%;
   }
   
   @media (min-width: 768px) {
@@ -37,11 +50,13 @@
       padding: 0 6rem;
     }
   }
-  
+
   /* Hero Quote Section */
   .hero-quote {
     padding-top: 140px; /* Account for fixed header */
     padding-bottom: 4rem;
+    text-align: center;
+    width: 100%;
   }
   
   .home-hero-quote {
@@ -67,8 +82,8 @@
   
   /* Hero Image */
   .hero-image-container {
-    margin-top: 2rem;
-    margin-bottom: 4rem;
+    width: 100%;
+    margin: 2rem 0 4rem;
   }
   
   .home-hero-image {
@@ -150,36 +165,36 @@
   
   /* Sections */
   .home-section {
+    width: 100%;
     margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .home-section-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #1e293b;
-    margin-bottom: 1rem;
-  }
+
   
   .responsive-grid-3 {
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    margin-top: 2rem;
   }
   
   @media (min-width: 768px) {
     .responsive-grid-3 {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
     }
   }
   
   @media (min-width: 1024px) {
     .responsive-grid-3 {
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 </style>
 
-<main class="section-padding max-width-container">
+<main class="page-main">
   <!-- Hero Quote Section -->
   <section class="hero-quote home-hero-quote">
     <h1 class="quote-text">
@@ -233,17 +248,27 @@
   </section>
 
   <section id="services" class="home-section">
-    <h2 class="home-section-title">Services</h2>
+    <PageHero 
+      label="Services"
+      title="Innovative Electrical Services for Smarter Cities"
+    />
     <div class="responsive-grid-3">
       {#each services as service}
-        <ServiceCard {...service} />
+        <ProjectCard {...service} />
       {/each}
     </div>
   </section>
 
   <section id="projects" class="home-section">
-    <h2 class="home-section-title">Showcasing VT Electric's Impactful Work</h2>
-      <div class="responsive-grid-3">
-      </div>
+    <PageHero 
+      label="Projects"
+      title="Showcasing VT Electric's Impactful Work"
+    />
+    <a href="/projects" use:link class="btn-primary">Explore All</a>
+    <div class="responsive-grid-3">
+      {#each projects as project}
+        <ProjectCard {...project} />
+      {/each}
+    </div>
   </section>
 </main>
