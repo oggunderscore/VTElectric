@@ -1,4 +1,5 @@
 <script>
+  import { config } from '../lib/config';
   import AboutCard from '../components/AboutCard.svelte';
   import PageHero from '../components/PageHero.svelte';
   import HeroImage from '../components/HeroImage.svelte';
@@ -58,7 +59,7 @@
 
   <!-- Full Width Image -->
   <HeroImage 
-    src="/src/assets/los_angeles.png"
+    src={`${config.imageBase}/los_angeles.png`}
     alt="Los Angeles Skyline"
   />
 
@@ -70,7 +71,7 @@
   <!-- About Card Section -->
   <section class="about-card-section">
     <AboutCard 
-      imageUrl="/src/assets/via_night.jpeg"
+      imageUrl={`${config.imageBase}/via_night.jpeg`}
       imageAlt="Viaduct at night"
     />
   </section>

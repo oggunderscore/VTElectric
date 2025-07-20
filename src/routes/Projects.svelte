@@ -1,36 +1,37 @@
 <script>
   import ProjectCard from '../components/ProjectCard.svelte';
   import PageHero from '../components/PageHero.svelte';
+  import { config } from '../lib/config';
   
   const projects = [
     {
       title: 'Sixth Street Viaduct',
-      image: '/src/assets/via_night.jpeg',
+      image: `${config.imageBase}/via_night.jpeg`,
       // description: 'Major infrastructure lighting project for the iconic Los Angeles bridge'
     },
     {
       title: '405 Freeway Traffic Signal Intersections',
-      image: '/src/assets/405.png',
+      image: `${config.imageBase}/405.png`,
       // description: 'Comprehensive traffic signal system installation and management'
     },
     {
       title: '57 & 91 Freeway High Mast Lights',
-      image: '/src/assets/57.jpg',
+      image: `${config.imageBase}/57.jpg`,
       // description: 'High mast lighting installation for improved highway safety'
     },
     {
       title: 'Downtown LA Street Lighting',
-      image: '/src/assets/placeholder.jpeg',
+      image: `${config.imageBase}/placeholder.jpeg`,
       // description: 'Modern LED street lighting upgrade for downtown Los Angeles'
     },
     {
       title: 'Metro Fiber Optic Network',
-      image: '/src/assets/placeholder.jpeg',
+      image: `${config.imageBase}/placeholder.jpeg`,
       // description: 'Fiber optic infrastructure for metropolitan connectivity'
     },
     {
       title: 'Smart City Initiative',
-      image: '/src/assets/placeholder.jpeg',
+      image: `${config.imageBase}/placeholder.jpeg`,
       // description: 'Integrated smart lighting and traffic management systems'
     }
   ];

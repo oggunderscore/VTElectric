@@ -2,28 +2,29 @@
   import { link } from 'svelte-spa-router';
   import ProjectCard from '../components/ProjectCard.svelte';
   import PageHero from '../components/PageHero.svelte';
+  import { config } from '../lib/config';
   
   const services = [
-    { title: 'Fiber Optic Installation', image: '/src/assets/placeholder.jpeg' },
-    { title: 'Street Lighting Installations', image: '/src/assets/placeholder.jpeg' },
-    { title: 'Traffic Signal System Management', image: '/src/assets/placeholder.jpeg' },
-    { title: 'Electrical Infrastructure', image: '/src/assets/placeholder.jpeg' },
-    { title: 'Smart City Solutions', image: '/src/assets/placeholder.jpeg' },
-    { title: 'Emergency Repairs', image: '/src/assets/placeholder.jpeg' }
+    { title: 'Fiber Optic Installation', image: `${config.imageBase}/placeholder.jpeg` },
+    { title: 'Street Lighting Installations', image: `${config.imageBase}/placeholder.jpeg` },
+    { title: 'Traffic Signal System Management', image: `${config.imageBase}/placeholder.jpeg` },
+    { title: 'Electrical Infrastructure', image: `${config.imageBase}/placeholder.jpeg` },
+    { title: 'Smart City Solutions', image: `${config.imageBase}/placeholder.jpeg` },
+    { title: 'Emergency Repairs', image: `${config.imageBase}/placeholder.jpeg` }
   ];
   
   const projects = [
     { 
       title: 'Sixth Street Viaduct',
-      image: '/src/assets/via_night.jpeg',
+      image: `${config.imageBase}/via_night.jpeg`,
     },
     { 
       title: '405 Freeway Traffic Signal Intersections',
-      image: '/src/assets/405.png',
+      image: `${config.imageBase}/405.png`,
     },
     { 
       title: '57 & 91 Freeway High Mast Lights',
-      image: '/src/assets/57.jpg',
+      image: `${config.imageBase}/57.jpg`,
     }
   ];
 </script>
@@ -207,7 +208,7 @@
   <!-- Large Hero Image -->
   <div class="hero-image-container">
     <img 
-      src="/src/assets/home_viaduct.png" 
+      src={`${config.imageBase}/home_viaduct.png`}
       alt="Sixth Street Viaduct" 
       class="home-hero-image"
     />
@@ -219,7 +220,7 @@
       <!-- Left Half - Image -->
       <div class="home-about-image-wrapper">
         <img 
-          src="/src/assets/worker.png" 
+          src={`${config.imageBase}/worker.png`}
           alt="VT Electric Worker" 
           class="home-about-image"
         />

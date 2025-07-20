@@ -1,6 +1,7 @@
 <script>
   import PageHero from '../components/PageHero.svelte';
   import ProjectCard from '../components/ProjectCard.svelte';
+  import { config } from '../lib/config';
 </script>
 
 <style>
@@ -44,27 +45,27 @@
   <div class="services-grid">
     <ProjectCard 
       title="Fiber Optic Installation"
-      image="/src/assets/placeholder.jpeg"
+      image={`${config.imageBase}/placeholder.jpeg`}
     />
     <ProjectCard 
       title="Street Lighting"
-      image="/src/assets/placeholder.jpeg"
+      image={`${config.imageBase}/placeholder.jpeg`}
     />
     <ProjectCard 
       title="Traffic Systems"
-      image="/src/assets/placeholder.jpeg"
+      image={`${config.imageBase}/placeholder.jpeg`}
     />
     <ProjectCard 
       title="Infrastructure"
-      image="/src/assets/placeholder.jpeg"
+      image={`${config.imageBase}/placeholder.jpeg`}
     />
     <ProjectCard 
       title="Smart Cities"
-      image="/src/assets/placeholder.jpeg"
+      image={`${config.imageBase}/placeholder.jpeg`}
     />
     <ProjectCard 
       title="Emergency Services"
-      image="/src/assets/placeholder.jpeg"
+      image={`${config.imageBase}/placeholder.jpeg`}
     />
   </div>
 </main>
