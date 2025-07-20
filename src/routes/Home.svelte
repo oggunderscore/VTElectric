@@ -1,10 +1,14 @@
 <script>
   import { link } from 'svelte-spa-router';
+  import ServiceCard from '../components/ServiceCard.svelte';
   
   const services = [
-    { title: 'Fiber Optic Installation', image: '/images/fiber-optic.jpg' },
-    { title: 'Street Lighting Installations', image: '/images/street-lighting.jpg' },
-    { title: 'Traffic Signal System Management', image: '/images/traffic-signal.jpg' }
+    { title: 'Fiber Optic Installation', image: '/src/assets/placeholder.jpeg' },
+    { title: 'Street Lighting Installations', image: '/src/assets/placeholder.jpeg' },
+    { title: 'Traffic Signal System Management', image: '/src/assets/placeholder.jpeg' },
+    { title: 'Electrical Infrastructure', image: '/src/assets/placeholder.jpeg' },
+    { title: 'Smart City Solutions', image: '/src/assets/placeholder.jpeg' },
+    { title: 'Emergency Repairs', image: '/src/assets/placeholder.jpeg' }
   ];
   
   const projects = [
@@ -33,30 +37,8 @@
   }
   
   .hero-image-container {
-    margin-top: 2rem; /* Reduced gap from Contact Us button */
+    margin-top: 2rem;
     margin-bottom: 4rem;
-  }
-  
-  .service-card, .project-card {
-    transition: transform 0.3s ease;
-  }
-  
-  .service-card:hover, .project-card:hover {
-    transform: translateY(-4px);
-  }
-  
-  .card-image {
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .card-title {
-    margin-top: 1rem;
-    font-weight: 500;
-    color: #111827;
-    text-align: center;
   }
 </style>
 
@@ -73,7 +55,7 @@
   <!-- Large Hero Image -->
   <div class="hero-image-container">
     <img 
-      src="/assets/home_viaduct.png" 
+      src="/src/assets/home_viaduct.png" 
       alt="Sixth Street Viaduct" 
       class="rounded-xl shadow-2xl w-full h-auto object-cover"
     />
@@ -116,30 +98,9 @@
   <section id="services" class="mt-12">
     <h2 class="text-2xl font-semibold text-vt-dark mb-4">Services</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="bg-white p-6 shadow-md rounded-md">
-        <img src="src/assets/placeholder.jpeg" alt="Placeholder" class="rounded-md w-full h-48 object-cover"/>
-        <h3 class="mt-4 text-lg font-medium">Fiber Optic Installation</h3>
-      </div>
-      <div class="bg-white p-6 shadow-md rounded-md">
-        <img src="src/assets/placeholder.jpeg" alt="Placeholder" class="rounded-md w-full h-48 object-cover"/>
-        <h3 class="mt-4 text-lg font-medium">Street Lighting Installations</h3>
-      </div>
-      <div class="bg-white p-6 shadow-md rounded-md">
-        <img src="src/assets/placeholder.jpeg" alt="Placeholder" class="rounded-md w-full h-48 object-cover"/>
-        <h3 class="mt-4 text-lg font-medium">Service 3</h3>
-      </div>
-      <div class="bg-white p-4 shadow-md rounded-md">
-        <img src="src/assets/placeholder.jpeg" alt="Sixth Street Viaduct" class="rounded-md w-full h-48 object-cover"/>
-        <h3 class="mt-4 text-lg font-medium">Service 4</h3>
-      </div>
-      <div class="bg-white p-4 shadow-md rounded-md">
-        <img src="src/assets/placeholder.jpeg" alt="405 Freeway Traffic Signal Intersections" class="rounded-md w-full h-48 object-cover"/>
-        <h3 class="mt-4 text-lg font-medium">Service 5</h3>
-      </div>
-      <div class="bg-white p-4 shadow-md rounded-md">
-        <img src="src/assets/placeholder.jpeg" alt="57 & 91 Freeway High Mast Lights" class="rounded-md w-full h-48 object-cover"/>
-        <h3 class="mt-4 text-lg font-medium">Service 6</h3>
-      </div>
+      {#each services as service}
+        <ServiceCard {...service} />
+      {/each}
     </div>
   </section>
 
