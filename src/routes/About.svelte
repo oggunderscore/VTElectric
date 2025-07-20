@@ -4,7 +4,21 @@
   import HeroImage from '../components/HeroImage.svelte';
 </script>
 
-<main class="section-padding max-width-container">
+<style>
+  .page-main {
+    @apply px-6 md:px-12 lg:px-24 max-w-7xl mx-auto pt-24;
+  }
+  
+  .about-subtitle {
+    @apply text-3xl lg:text-4xl font-semibold text-gray-800 text-center mb-12;
+  }
+  
+  .about-card-section {
+    @apply mt-8;
+  }
+</style>
+
+<main class="page-main">
   <!-- Hero Section -->
   <PageHero 
     label="About us"
@@ -18,12 +32,12 @@
   />
 
   <!-- Subtitle -->
-  <h2 class="text-3xl lg:text-4xl font-semibold text-gray-800 text-center mb-12">
+  <h2 class="about-subtitle">
     Lighting the Way to a Smarter, more Connected Infrastructure
   </h2>
 
   <!-- About Card Section -->
-  <section class="mt-8">
+  <section class="about-card-section">
     <AboutCard 
       imageUrl="/src/assets/via_night.jpeg"
       imageAlt="Viaduct at night"

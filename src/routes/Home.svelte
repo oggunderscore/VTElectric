@@ -19,9 +19,33 @@
 </script>
 
 <style>
+  /* Page layout */
+  .page-main {
+    padding: 0 1.5rem;
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+  
+  @media (min-width: 768px) {
+    .page-main {
+      padding: 0 3rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .page-main {
+      padding: 0 6rem;
+    }
+  }
+  
+  /* Hero Quote Section */
   .hero-quote {
     padding-top: 140px; /* Account for fixed header */
     padding-bottom: 4rem;
+  }
+  
+  .home-hero-quote {
+    text-align: center;
   }
   
   .quote-text {
@@ -36,20 +60,133 @@
     color: #4b5563;
   }
   
+  .home-hero-cta {
+    margin-top: 2rem;
+    display: inline-block;
+  }
+  
+  /* Hero Image */
   .hero-image-container {
     margin-top: 2rem;
     margin-bottom: 4rem;
+  }
+  
+  .home-hero-image {
+    border-radius: 0.75rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* About Card */
+  .home-about-card {
+    background-color: #f9fafb;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+  }
+  
+  .home-about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  @media (min-width: 1024px) {
+    .home-about-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .home-about-image-wrapper {
+    height: 100%;
+  }
+  
+  .home-about-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .home-about-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  @media (min-width: 1024px) {
+    .home-about-content {
+      padding: 3rem;
+    }
+  }
+  
+  .home-about-label {
+    color: #2563eb;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  
+  .home-about-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 1.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .home-about-title {
+      font-size: 2.25rem;
+    }
+  }
+  
+  .home-about-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: #4b5563;
+  }
+  
+  /* Sections */
+  .home-section {
+    margin-top: 3rem;
+  }
+  
+  .home-section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 1rem;
+  }
+  
+  .responsive-grid-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .responsive-grid-3 {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .responsive-grid-3 {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 </style>
 
 <main class="section-padding max-width-container">
   <!-- Hero Quote Section -->
-  <section class="hero-quote text-center">
+  <section class="hero-quote home-hero-quote">
     <h1 class="quote-text">
       "Excellence is the gradual result of always striving to do better."
     </h1>
     <p class="quote-author">-Pat Riley</p>
-    <a href="/contact" use:link class="btn-primary mt-8 inline-block">Contact Us</a>
+    <a href="/contact" use:link class="btn-primary home-hero-cta">Contact Us</a>
   </section>
 
   <!-- Large Hero Image -->
@@ -57,29 +194,29 @@
     <img 
       src="/src/assets/home_viaduct.png" 
       alt="Sixth Street Viaduct" 
-      class="rounded-xl shadow-2xl w-full h-auto object-cover"
+      class="home-hero-image"
     />
   </div>
 
   <!-- About Us Card Section -->
-  <section id="about" class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+  <section id="about" class="home-about-card">
+    <div class="home-about-grid">
       <!-- Left Half - Image -->
-      <div class="h-full">
+      <div class="home-about-image-wrapper">
         <img 
           src="/src/assets/worker.png" 
           alt="VT Electric Worker" 
-          class="w-full h-full object-cover"
+          class="home-about-image"
         />
       </div>
       
       <!-- Right Half - Text Content -->
-      <div class="p-8 lg:p-12 flex flex-col justify-center">
-        <p class="text-blue-600 font-medium mb-4">About us</p>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+      <div class="home-about-content">
+        <p class="home-about-label">About us</p>
+        <h2 class="home-about-title">
           Lighting the way since 1999
         </h2>
-        <div class="space-y-4 text-gray-600">
+        <div class="home-about-text">
           <p>
             For over two decades, VT Electric has been illuminating cities and highways with expertise and innovation. 
             We've had the honor of tackling complex urban projects, from a monumental bridge and a renowned city 
@@ -95,18 +232,18 @@
     </div>
   </section>
 
-  <section id="services" class="mt-12">
-    <h2 class="text-2xl font-semibold text-vt-dark mb-4">Services</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <section id="services" class="home-section">
+    <h2 class="home-section-title">Services</h2>
+    <div class="responsive-grid-3">
       {#each services as service}
         <ServiceCard {...service} />
       {/each}
     </div>
   </section>
 
-  <section id="projects" class="mt-12">
-    <h2 class="text-2xl font-semibold text-vt-dark mb-4">Showcasing VT Electric's Impactful Work</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <section id="projects" class="home-section">
+    <h2 class="home-section-title">Showcasing VT Electric's Impactful Work</h2>
+      <div class="responsive-grid-3">
       </div>
   </section>
 </main>

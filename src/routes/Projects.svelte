@@ -36,8 +36,22 @@
   ];
 </script>
 
+<style>
+  .page-main {
+    @apply px-6 md:px-12 lg:px-24 max-w-7xl mx-auto pt-24;
+  }
+  
+  .projects-section {
+    @apply mt-8;
+  }
+  
+  .responsive-grid-3 {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+  }
+</style>
 
-<main class="section-padding max-width-container">
+
+<main class="page-main">
   <!-- Hero Section -->
   <PageHero 
     label="Projects"
@@ -46,7 +60,7 @@
   
   <!-- Projects Grid -->
   <section class="mt-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="responsive-grid-3">
       {#each projects as project}
         <ServiceCard {...project} showDescription={true} />
       {/each}

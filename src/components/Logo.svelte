@@ -1,13 +1,15 @@
 <script>
   export let className = '';
+  export let width = '150';
+  export let height = 'auto';
 </script>
 
 <div class="flex items-center {className}">
-  <div class="flex items-center">
-    <span class="text-3xl font-bold text-vt-orange">VT</span>
-    <div class="ml-2">
-      <div class="text-sm font-medium text-vt-orange leading-none">Electric</div>
-      <div class="text-xs text-vt-orange">Inc.</div>
-    </div>
-  </div>
+  <img 
+    src="/src/assets/logo.png" 
+    alt="VT Electric Logo"
+    width={width}
+    height={height}
+    class="h-auto"
+  />
 </div>
