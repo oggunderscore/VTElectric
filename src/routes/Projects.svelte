@@ -78,7 +78,7 @@
   <!-- Projects Grid -->
   <section class="projects-section">
     <div class="responsive-grid-3">
-      {#each projects as project}
+      {#each projects as project (project.title)}
         <ProjectCard {...project} />
       {/each}
     </div>

@@ -97,71 +97,73 @@
   
   /* About Card */
   .home-about-card {
-    background-color: #f9fafb;
-    border-radius: 1rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
+    width: 100%;
+    margin-top: 3rem;
   }
   
   .home-about-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0;
+    gap: 2rem;
+    align-items: center;
   }
   
   @media (min-width: 1024px) {
     .home-about-grid {
       grid-template-columns: 1fr 1fr;
+      gap: 3rem;
     }
   }
   
   .home-about-image-wrapper {
+    width: 100%;
     height: 100%;
+    min-height: 400px;
   }
   
   .home-about-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 0.5rem;
   }
   
   .home-about-content {
-    padding: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-  }
-  
-  @media (min-width: 1024px) {
-    .home-about-content {
-      padding: 3rem;
-    }
+    justify-content: flex-start;
   }
   
   .home-about-label {
-    color: #2563eb;
+    color: #6b7280;
     font-weight: 500;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     margin-bottom: 1rem;
   }
   
   .home-about-title {
-    font-size: 1.875rem;
+    font-size: 2rem;
     font-weight: 700;
     color: #111827;
     margin-bottom: 1.5rem;
+    line-height: 1.2;
   }
   
   @media (min-width: 768px) {
     .home-about-title {
-      font-size: 2.25rem;
+      font-size: 2.5rem;
     }
   }
   
   .home-about-text {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.25rem;
     color: #4b5563;
+    font-size: 1.125rem;
+    line-height: 1.75;
   }
   
   /* Sections */
@@ -183,12 +185,6 @@
   }
   
   @media (min-width: 768px) {
-    .responsive-grid-3 {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  @media (min-width: 1024px) {
     .responsive-grid-3 {
       grid-template-columns: repeat(3, 1fr);
     }
@@ -254,7 +250,7 @@
       title="Innovative Electrical Services for Smarter Cities"
     />
     <div class="responsive-grid-3">
-      {#each services as service}
+      {#each services as service (service.title)}
         <ProjectCard {...service} />
       {/each}
     </div>
@@ -267,7 +263,7 @@
     />
     <a href="/projects" use:link class="btn-primary">Explore All</a>
     <div class="responsive-grid-3">
-      {#each projects as project}
+      {#each projects as project (project.title)}
         <ProjectCard {...project} />
       {/each}
     </div>

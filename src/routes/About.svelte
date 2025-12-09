@@ -3,6 +3,7 @@
   import AboutCard from '../components/AboutCard.svelte';
   import PageHero from '../components/PageHero.svelte';
   import HeroImage from '../components/HeroImage.svelte';
+  import ContactButton from '../components/ContactButton.svelte';
 </script>
 
 <style>
@@ -56,6 +57,9 @@
     label="About us"
     title="Powering Cities, Connecting Communities"
   />
+
+  <!-- Contact Button -->
+  <ContactButton />
 
   <!-- Full Width Image -->
   <HeroImage 

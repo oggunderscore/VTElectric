@@ -20,7 +20,7 @@
       
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center gap-8">
-        {#each navItems as item}
+        {#each navItems as item (item.href)}
           <a href={item.href} use:link class="text-gray-700 hover:text-vt-orange transition-colors font-medium">
             {item.name}
           </a>
@@ -46,7 +46,7 @@
     <!-- Mobile Menu -->
     {#if mobileMenuOpen}
       <div class="md:hidden py-4 border-t">
-        {#each navItems as item}
+        {#each navItems as item (item.href)}
           <a
             href={item.href}
             use:link

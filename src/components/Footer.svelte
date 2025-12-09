@@ -13,8 +13,8 @@
 
 <style>
   .footer {
-    background-color: #111827;
-    color: white;
+    background-color: white;
+    color: #111827;
     padding: 3rem 0;
     margin-top: 5rem;
   }
@@ -32,7 +32,7 @@
   }
   
   .footer-description {
-    color: #9ca3af;
+    color: #4b5563;
     font-size: 1.25rem;
   }
   
@@ -60,20 +60,20 @@
   
   .footer-link {
     display: block;
-    color: #9ca3af;
+    color: #6b7280;
     transition: color 200ms;
   }
   
   .footer-link:hover {
-    color: white;
+    color: #111827;
   }
   
   .footer-copyright {
     margin-top: 2rem;
     padding-top: 2rem;
-    border-top: 1px solid #1f2937;
+    border-top: 1px solid #e5e7eb;
     text-align: center;
-    color: #9ca3af;
+    color: #6b7280;
   }
 </style>
 
@@ -91,7 +91,7 @@
       <div class="footer-links-section">
         <h3 class="footer-links-title">Quick Links</h3>
         <nav class="footer-links-nav">
-          {#each footerLinks as footerLink}
+          {#each footerLinks as footerLink (footerLink.href)}
             <a href={footerLink.href} use:link class="footer-link">
               {footerLink.name}
             </a>
