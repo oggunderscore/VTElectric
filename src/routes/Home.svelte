@@ -5,8 +5,8 @@
   import { config } from '../lib/config';
   
   const services = [
-    { title: 'Fiber Optic Installation', image: `${config.imageBase}/placeholder.jpeg` },
-    { title: 'Street Lighting Installations', image: `${config.imageBase}/placeholder.jpeg` },
+    { title: 'Fiber Optic Installation', image: `${config.imageBase}/placeholder.jpeg`, href: '/services/fiber-optic-installation' },
+    { title: 'Street Lighting Installations', image: `${config.imageBase}/placeholder.jpeg`, href: '/services/street-lighting-installations' },
     { title: 'Traffic Signal System Management', image: `${config.imageBase}/placeholder.jpeg` },
     { title: 'Electrical Infrastructure', image: `${config.imageBase}/placeholder.jpeg` },
     { title: 'Smart City Solutions', image: `${config.imageBase}/placeholder.jpeg` },
@@ -17,14 +17,17 @@
     { 
       title: 'Sixth Street Viaduct',
       image: `${config.imageBase}/via_night.jpeg`,
+      href: '/projects/sixth-street-viaduct'
     },
     { 
       title: '405 Freeway Traffic Signal Intersections',
       image: `${config.imageBase}/405.png`,
+      href: '/projects/405-freeway-traffic-signals'
     },
     { 
       title: '57 & 91 Freeway High Mast Lights',
       image: `${config.imageBase}/57.jpg`,
+      href: '/projects/57-91-freeway-high-mast-lights'
     }
   ];
 </script>

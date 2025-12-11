@@ -1,7 +1,10 @@
 <script>
+  import { link } from 'svelte-spa-router';
+  
   export let title = '';
   export let image = '';
   export let description = '';
+  export let href = null;
 </script>
 
 <style>
@@ -9,10 +12,16 @@
     display: flex;
     flex-direction: column;
     transition: transform 0.3s;
+    text-decoration: none;
+    color: inherit;
   }
   
   .card-container:hover {
     transform: translateY(-0.5rem);
+  }
+  
+  .card-container.clickable {
+    cursor: pointer;
   }
   
   .image-container {
@@ -53,15 +62,27 @@
   }
 </style>
 
-<div class="card-container">
-  <div class="image-container">
-    <img src={image} alt={title} />
+{#if href}
+  <a href={href} use:link class="card-container clickable">
+    <div class="image-container">
+      <img src={image} alt={title} />
+    </div>
+    <h3 class="card-title">{title}</h3>
+    {#if description}
+      <p class="card-description">{description}</p>
+    {/if}
+  </a>
+{:else}
+  <div class="card-container">
+    <div class="image-container">
+      <img src={image} alt={title} />
+    </div>
+    <h3 class="card-title">{title}</h3>
+    {#if description}
+      <p class="card-description">{description}</p>
+    {/if}
   </div>
-  <h3 class="card-title">{title}</h3>
-  {#if description}
-    <p class="card-description">{description}</p>
-  {/if}
-</div>
+{/if}
 <!-- 
 <div class="group">
   <div class="aspect-container">
